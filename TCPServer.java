@@ -33,9 +33,11 @@ class Connection extends Thread {
 			System.out.println("Connection:"+e.getMessage());
 		}
 	}
+
 	public void run(){
-		try {					// an echo server
-			String data = in.readUTF();	// read a line of data from the stream
+		try {
+			String data = in.readUTF();
+			System.out.println(data);
 			out.writeUTF(data);
 		}
 		catch (EOFException e){
